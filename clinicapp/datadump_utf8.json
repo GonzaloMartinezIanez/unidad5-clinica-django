@@ -1,0 +1,421 @@
+[
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Medicos",
+            "permissions": [
+                [
+                    "change_appointment",
+                    "appointment",
+                    "appointment"
+                ],
+                [
+                    "view_appointment",
+                    "appointment",
+                    "appointment"
+                ],
+                [
+                    "view_patient",
+                    "patients",
+                    "patient"
+                ]
+            ]
+        }
+    },
+    {
+        "model": "auth.group",
+        "fields": {
+            "name": "Recepcionistas",
+            "permissions": [
+                [
+                    "add_appointment",
+                    "appointment",
+                    "appointment"
+                ],
+                [
+                    "change_appointment",
+                    "appointment",
+                    "appointment"
+                ],
+                [
+                    "delete_appointment",
+                    "appointment",
+                    "appointment"
+                ],
+                [
+                    "view_appointment",
+                    "appointment",
+                    "appointment"
+                ],
+                [
+                    "add_patient",
+                    "patients",
+                    "patient"
+                ],
+                [
+                    "change_patient",
+                    "patients",
+                    "patient"
+                ],
+                [
+                    "delete_patient",
+                    "patients",
+                    "patient"
+                ],
+                [
+                    "view_patient",
+                    "patients",
+                    "patient"
+                ]
+            ]
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$vQbhHd9PLF8UnYpMElPBvY$YhZVOmAk03N+1gr8qJQmMcO3fJeS5HzxLLrDAmNEW04=",
+            "last_login": "2026-01-29T18:25:05.327Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-27T15:48:51.913Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$AaCxrV3fdaSVaGymK8fI0K$1yxjVO2yyQgqJ1TDkA9YjQEB33uY00ElwUp1TvCWt80=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "Pedro",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-27T21:32:23Z",
+            "groups": [
+                [
+                    "Medicos"
+                ]
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$1200000$mwS2PmEp1bmgLKhJgsuBtC$BFP/YuoHOfLvS3m9YsMc+1rIx5bIE3D+3/hdiSqQj1M=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "Marta",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-01-27T21:32:48Z",
+            "groups": [
+                [
+                    "Recepcionistas"
+                ]
+            ],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "fhjhgnm3jeybwfceq426a4gvbpfwys4q",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pDCtAO4dO8ZCDCDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-JnEWSpx-txjSg-sO6B7qrcnU6rrMUe6KPGiX10b8vBzu30EJvXxrw3pKVgEZzJMjh0wmxTzgiDm7AREQNetkwREHSzCCsi7oDNY6ZiXeH94fN6Q:1vklJT:4bGJy7Jp55LoBWYA1UNJ7Qq7JAxDb3ZeP82POgMG45c",
+            "expire_date": "2026-02-10T15:49:07.760Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "hi0a8rwar031yqpjkwpnd8fsfw54k3t9",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2pDCtAO4dO8ZCDCDVA0kpV0Z765NutDtf-_9l_BhW4vfOi9-JnEWSpx-txjSg-sO6B7qrcnU6rrMUe6KPGiX10b8vBzu30EJvXxrw3pKVgEZzJMjh0wmxTzgiDm7AREQNetkwREHSzCCsi7oDNY6ZiXeH94fN6Q:1vlWhV:h-keJ2dBo7lNY0tMRA0GBeXBCHBaeozFvMedfOfKkEU",
+            "expire_date": "2026-02-12T18:25:05.331Z"
+        }
+    },
+    {
+        "model": "authtoken.token",
+        "pk": "729acab2fde374490d446ff14d3b4a21eab6dfe2",
+        "fields": {
+            "user": [
+                "Pedro"
+            ],
+            "created": "2026-01-27T23:13:29.583Z"
+        }
+    },
+    {
+        "model": "authtoken.token",
+        "pk": "7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+        "fields": {
+            "user": [
+                "Marta"
+            ],
+            "created": "2026-01-27T23:13:25.132Z"
+        }
+    },
+    {
+        "model": "patients.patient",
+        "pk": 1,
+        "fields": {
+            "name": "Isabel",
+            "last_name": "Fernández López",
+            "dni": "12345678A",
+            "phone_number": "+34 123456789",
+            "birth_date": "1985-05-23"
+        }
+    },
+    {
+        "model": "patients.patient",
+        "pk": 5,
+        "fields": {
+            "name": "José",
+            "last_name": "López Fernández",
+            "dni": "87654321B",
+            "phone_number": "+34 987654321",
+            "birth_date": "1998-11-04"
+        }
+    },
+    {
+        "model": "patients.patient",
+        "pk": 6,
+        "fields": {
+            "name": "Lucia",
+            "last_name": "Martínez Muñoz",
+            "dni": "57426845C",
+            "phone_number": "+34 987654321",
+            "birth_date": "2002-04-25"
+        }
+    },
+    {
+        "model": "appointment.appointment",
+        "pk": 2,
+        "fields": {
+            "patient": 1,
+            "appointment_date": "2026-02-15T12:30:00Z",
+            "diagnosis": "Se ha fracturado la tibia",
+            "status": "FIN"
+        }
+    },
+    {
+        "model": "appointment.appointment",
+        "pk": 4,
+        "fields": {
+            "patient": 1,
+            "appointment_date": "2026-02-19T15:30:00Z",
+            "diagnosis": "",
+            "status": "PEN"
+        }
+    },
+    {
+        "model": "appointment.appointment",
+        "pk": 6,
+        "fields": {
+            "patient": 5,
+            "appointment_date": "2026-05-02T08:00:00Z",
+            "diagnosis": "",
+            "status": "PEN"
+        }
+    },
+    {
+        "model": "appointment.appointment",
+        "pk": 7,
+        "fields": {
+            "patient": 5,
+            "appointment_date": "2026-05-02T13:45:00Z",
+            "diagnosis": "Se le ha recetado un medicamento.",
+            "status": "FIN"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 1,
+        "fields": {
+            "action_time": "2026-01-27T21:29:21.269Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "object_id": "1",
+            "object_repr": "Medicos",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 2,
+        "fields": {
+            "action_time": "2026-01-27T21:29:59.694Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "object_id": "2",
+            "object_repr": "Recepcionistas",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 3,
+        "fields": {
+            "action_time": "2026-01-27T21:32:24.078Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "object_id": "2",
+            "object_repr": "Pedro",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 4,
+        "fields": {
+            "action_time": "2026-01-27T21:32:49.058Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "object_id": "3",
+            "object_repr": "Marta",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2026-01-27T21:33:05.246Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "object_id": "2",
+            "object_repr": "Pedro",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2026-01-27T21:33:15.960Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "user"
+            ],
+            "object_id": "3",
+            "object_repr": "Marta",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Groups\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2026-01-27T23:13:25.133Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "authtoken",
+                "tokenproxy"
+            ],
+            "object_id": "3",
+            "object_repr": "7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2026-01-27T23:13:29.584Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "authtoken",
+                "tokenproxy"
+            ],
+            "object_id": "2",
+            "object_repr": "729acab2fde374490d446ff14d3b4a21eab6dfe2",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2026-01-29T18:39:00.660Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "object_id": "1",
+            "object_repr": "Medicos",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 10,
+        "fields": {
+            "action_time": "2026-01-29T18:39:50.374Z",
+            "user": [
+                "admin"
+            ],
+            "content_type": [
+                "auth",
+                "group"
+            ],
+            "object_id": "1",
+            "object_repr": "Medicos",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+        }
+    }
+]
