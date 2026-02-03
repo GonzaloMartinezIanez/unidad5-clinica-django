@@ -1,0 +1,397 @@
+{
+  "info": {
+    "_postman_id": "d151614c-ab79-4784-b8eb-ad47dd2c3849",
+    "name": "EjercicioUnidad5",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50176382",
+    "_collection_link": "https://go.postman.co/collection/50176382-d151614c-ab79-4784-b8eb-ad47dd2c3849?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Token",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "/* {\r\n    \"username\": \"Pedro\",\r\n    \"password\": \"medico1234\"    \r\n}\r\n */\r\n{\r\n    \"username\": \"Marta\",\r\n    \"password\": \"recepcionista1234\"    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/auth/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "auth",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patients - Medicos y Recepcionistas",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "/* {\r\n    \"username\": \"Pedro\",\r\n    \"password\": \"medico1234\"    \r\n}\r\n */\r\n{\r\n    \"username\": \"Marta\",\r\n    \"password\": \"recepcionista1234\"    \r\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/patient/viewset/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "patient",
+            "viewset",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patients - Recepcionistas",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "/* {\r\n    \"name\": \"Juan\",\r\n    \"last_name\": \"Fernández López\",\r\n    \"dni\": \"12345678A\",\r\n    \"phone_number\": \"+34 123456789\",\r\n    \"birth_date\": \"1985-05-23\"\r\n} */\r\n\r\n/* {\r\n    \"name\": \"José\",\r\n    \"last_name\": \"López Fernández\",\r\n    \"dni\": \"87654321B\",\r\n    \"phone_number\": \"+34 987654321\",\r\n    \"birth_date\": \"1998-11-04\"\r\n} */\r\n\r\n{\r\n    \"name\": \"Lucia\",\r\n    \"last_name\": \"Martínez Muñoz\",\r\n    \"dni\": \"57426845C\",\r\n    \"phone_number\": \"+34 987654321\",\r\n    \"birth_date\": \"2002-04-25\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/patient/viewset/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "patient",
+            "viewset",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patients - Recepcionistas",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Isabel\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/patient/viewset/12345678A/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "patient",
+            "viewset",
+            "12345678A",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patients - Recepcionistas",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/patient/viewset/87654321B/?",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "patient",
+            "viewset",
+            "87654321B",
+            ""
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Appointments - Medicos y recepcionistas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/appointment/viewset/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "appointment",
+            "viewset",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Appointments - Recepcionistas",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "/* {\r\n    \"patient\" : \"1\",\r\n    \"appointment_date\": \"2026-02-15 12:30:00\"\r\n} */\r\n/* {\r\n    \"patient\" : \"1\",\r\n    \"appointment_date\": \"2026-02-19 15:30:00\"\r\n} */\r\n/* {\r\n    \"patient\" : \"3\",\r\n    \"appointment_date\": \"2026-03-02 08:00:00\"\r\n} */\r\n/* {\r\n    \"patient\" : \"5\",\r\n    \"appointment_date\": \"2026-05-02 08:00:00\"\r\n}  */\r\n\r\n/* {\r\n    \"patient\" : \"5\",\r\n    \"appointment_date\": \"2026-05-02 05:00:00\"\r\n}  */\r\n\r\n{\r\n    \"patient\" : \"5\",\r\n    \"appointment_date\": \"2026-06-02 13:45:00\"\r\n} \r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/appointment/viewset/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "appointment",
+            "viewset",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Appointments - Recepcionistas",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/appointment/destroy/3/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "appointment",
+            "destroy",
+            "3",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PendingAppointments - Medicos y recepcionistas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 729acab2fde374490d446ff14d3b4a21eab6dfe2",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/appointment/pending/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "appointment",
+            "pending",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PatientHistory - Medicos y recepcionistas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 729acab2fde374490d446ff14d3b4a21eab6dfe2",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:8000/patient/history/12345678A/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "patient",
+            "history",
+            "12345678A",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "EndAppointment - Medicos",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Token 729acab2fde374490d446ff14d3b4a21eab6dfe2",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"diagnosis\": \"Se le ha recetado un medicamento.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/appointment/end/7/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "appointment",
+            "end",
+            "7",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
