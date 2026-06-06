@@ -14,6 +14,7 @@ Crear un commit y un tag
 git add .
 git commit -m "Añadir workflow"
 git tag 1.2.0
+git push
 ```
 
 
