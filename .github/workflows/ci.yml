@@ -22,7 +22,7 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
 
       - name: Construir imagen
-        run: docker build -f clinicapp/Dockerfile -t ghcr.io/${{ toLower(github.repository) }}:${{ github.ref_name }} clinicapp
+        run: docker build -f clinicapp/Dockerfile -t ghcr.io/gonzalomartinezianez/unidad5-clinica-django:${{ github.ref_name }} clinicapp
 
       - name: Push image
-        run: docker push ghcr.io/${{ toLower(github.repository) }}:${{ github.ref_name }}
+        run: docker push ghcr.io/gonzalomartinezianez/unidad5-clinica-django:${{ github.ref_name }}
