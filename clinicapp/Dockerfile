@@ -9,13 +9,13 @@ RUN mkdir /app
 WORKDIR /app
 
 # Copiar los paquetes que debe instalar en la carpeta
-COPY requirements.txt  /app/
+COPY clinicapp/requirements.txt  .
 
 # Instalar los paquetes
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar el resto del proyecto a la carpeta /app
-COPY . /app/
+COPY clinicapp/ .
  
 # Exponer el puerto 8000 al exterior para que nuestra máquina
 # pueda consumir los endpoints del contenedor
