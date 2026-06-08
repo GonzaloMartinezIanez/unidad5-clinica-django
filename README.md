@@ -28,7 +28,7 @@ git push origin 1.2.3
 ### Descargar la imagen
 En el repositorio solo sale "Releases", pero también hay un "Package" que se accede mediante la siguiente url:
 ```
-docker pull ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.3
+docker pull ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.4
 ```
 En el apartado de Packages de la web, no hay ningún paquete, no sé si hay que hacer algo más o que tarda en actualizarse.
 
