@@ -22,7 +22,7 @@ Primero hay que añadir las nuevas funcionalidades de esta versión. Se crea el 
 git add .
 git commit -m "Documentación y .dockerignore"
 git tag 1.2.3
-git push
+git push origin 1.2.3
 ```
 
 ### Descargar la imagen
@@ -31,6 +31,9 @@ En el repositorio solo sale "Releases", pero también hay un "Package" que se ac
 docker pull ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.3
 ```
 En el apartado de Packages de la web, no hay ningún paquete, no sé si hay que hacer algo más o que tarda en actualizarse.
+
+Para lanzar la imagen, he usado la siguiente configuración en docker desktop
+![Lanzar el contenedor en Docker desktop](./dockerrun.png)
 
 ### Comprobación
 Para comprobar que ha funcionado correctamente se pueden probar los siguientes endpoints:
@@ -47,6 +50,8 @@ http://127.0.0.1:8000/patient/viewset/
 Headers:
     Authorization       -       Token 7962a24bb2ddb298304cd1fcd9238217f7cf9c22
 ```
+Los endpoints están funcionando correctamente
+![Comporbación](./ejecucion.png)
 
 ### Conclusión
 Es la primera vez que hago uso de las GitHub Actions y es complicado de configurar, pero una vez que funciona, las ventajas son muy importantes. En un proyecto serio que hay que desplegarlo en un entorno real, no se puede perder el tiempo asegurandose de que la nueva versión funciona correctamente en el servidor. De esta forma, se automatiza el proceso y hay que preocuparse de otros aspectos.
