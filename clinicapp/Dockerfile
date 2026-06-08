@@ -1,6 +1,6 @@
 # Usar la versión de python slim ya que es más ligera
 # Analiza las dependencias y eliminas las innecesarias
-FROM python:3.13
+FROM python:3.13-slim
 
 # Crear una carpeta en la raíz del contenedor
 RUN mkdir /app

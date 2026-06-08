@@ -1,0 +1,6 @@
+.env
+__pycache__/
+venv/
+convert-utf8.py
+datadump_utf8.json
+datadump.json
