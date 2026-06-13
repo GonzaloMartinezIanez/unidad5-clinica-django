@@ -20,6 +20,12 @@ docker run -d --name=clinica -p 80:8000 -e SECRET_KEY="clavesecreta" --restart a
 
 
 
+docker pull ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.4
+```
+En el apartado de Packages de la web, no hay ningún paquete, no sé si hay que hacer algo más o que tarda en actualizarse.
+
+Para lanzar la imagen, he usado la siguiente configuración en docker desktop
+![Lanzar el contenedor en Docker desktop](./dockerrun.png)
 
 ### Comprobación
 Para comprobar que ha funcionado correctamente se pueden probar los siguientes endpoints:
