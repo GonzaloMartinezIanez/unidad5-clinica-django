@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', obtain_auth_token, name='api_token_auth'),
     path('patient/', include('patients.urls')),
-    path('appointment/', include('appointment.urls'))
+    path('appointment/', include('appointment.urls')),
+    path('health/', include('health.urls')),
 ]
