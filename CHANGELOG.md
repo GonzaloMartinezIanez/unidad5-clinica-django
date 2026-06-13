@@ -1,6 +1,11 @@
 # Changelog
 Los cambios de este proyecto se verán reflejados en este fichero
 
+## [1.2.6]
+### Added
+- Endpoint /health/ sin autenticación para probar
+- ALLOWED_HOSTS = ["*"]
+
 ## [1.2.3]
 ### Added
 - Añadir .dockerignore y usar una versión ligera de python
