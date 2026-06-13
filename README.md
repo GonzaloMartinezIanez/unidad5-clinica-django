@@ -1,39 +1,25 @@
-# Despliegue a producción - GitHub Actions
+# Despliegue a producción - Compute Engine
 Universidad Europea\
 Despliegue a producción\
-Ejercicio entregable de la Unidad 2\
+Ejercicio entregable de la Unidad 3\
 Gonzalo Martínez Iáñez
 
 Para ver el README.md de la entrega anterior consultar el commmit 4b44877
 
 ### Memoria
-En esta actividad se pide que usando GitHub Actions se construya el proyecto cada vez que se introduce un nuevo tag en el repositorio. Para esto es necesario crear el fichero .ci.yml dentro de una carpeta .github/workflows/ en la raíz del repositorio. En ese fichero se especifica que cada vez que se haga push con un nuevo tag, GitHub lo construya en sus servidores y lo empaquete en un zip. De esta forma se puede asegurar que no hay errores de compilación. Adicionalmente, también lo he configurado para que genere una imagen del proyecto que se pueda descargar de manera pública. Para ello hay que seguir los siguientes pasos:
 
-Generar un token.\
-Desde la cuenta de github Settings -> Developer settings -> Personal access token -> Token classic -> Generate new token -> Dar un nombre -> Dar permisos de (write:packages y delete:packages) -> Generar token -> Copiar el token porque solo se muestra una vez (Volver a generarlo si se pierde)
-
-Añadir este token a este repositorio.\
-Copiar el secreto en el repositorio: Settings -> Secrets and variables -> Actions -> New repository secret -> Dar un nombre y copiar el token
 
 ### Pasos para ejecutar la acción
-Primero hay que añadir las nuevas funcionalidades de esta versión. Se crea el commit y también un nueva etiqueta. Cuando se cumplen estos pasos y se hace un "push" a GitHub, se desencadenarán las GitHub Actions que construirá el proyecto y si lo ha creado exitosamente, creará la imagen de docker.
+Crear una cuenta en Compute Engine -> Habilitar Compute Engine API -> Crear instancia -> Nombre y elegir Madrid como Región -> Serie E para el tipo de máquina (e-2 small) -> pestaña de SO y almacenamiento -> Cambiar sistema operativo y almacenamiento -> Sistema Operativo: Container Optimized OS -> Pestaña de red -> Firewall: Permitir tráfico HTTP y HTTPS -> Crear la instancia
+Acceder a la MV por SSH desde el navegador
+```
+docker pull ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.5
+docker images
+docker run -d --name=clinica -p 80:8000 -e SECRET_KEY="clavesecreta" --restart always ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.5
+```
 
-```
-git add .
-git commit -m "Documentación y .dockerignore"
-git tag 1.2.3
-git push origin 1.2.3
-```
 
-### Descargar la imagen
-En el repositorio solo sale "Releases", pero también hay un "Package" que se accede mediante la siguiente url:
-```
-docker pull ghcr.io/gonzalomartinezianez/unidad5-clinica-django:1.2.3
-```
-En el apartado de Packages de la web, no hay ningún paquete, no sé si hay que hacer algo más o que tarda en actualizarse.
 
-Para lanzar la imagen, he usado la siguiente configuración en docker desktop
-![Lanzar el contenedor en Docker desktop](./dockerrun.png)
 
 ### Comprobación
 Para comprobar que ha funcionado correctamente se pueden probar los siguientes endpoints:
@@ -54,4 +40,3 @@ Los endpoints están funcionando correctamente
 ![Comporbación](./ejecucion.png)
 
 ### Conclusión
-Es la primera vez que hago uso de las GitHub Actions y es complicado de configurar, pero una vez que funciona, las ventajas son muy importantes. En un proyecto serio que hay que desplegarlo en un entorno real, no se puede perder el tiempo asegurandose de que la nueva versión funciona correctamente en el servidor. De esta forma, se automatiza el proceso y hay que preocuparse de otros aspectos.
